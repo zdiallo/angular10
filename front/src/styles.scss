@@ -5,7 +5,7 @@ body {
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
 }
 
 main {
@@ -30,8 +30,8 @@ button {
     }
 
     &:active {
-        border-color: #ccc;
-        background: #ccc;
+      border-color: #ccc;
+      background: #ccc;
     }
 
     &.primary {
@@ -46,7 +46,25 @@ button {
       &:active {
         border-color: #555;
         background: #555;
+      }
     }
-    }
+  }
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+  max-width: 25em;
+
+  label {
+    padding-bottom: 0.5em;
+  }
+
+  input {
+    padding: 0.5em 1em;
+    border: 0.1em solid #bbb;
+  }
+  button {
+    margin-top: 2em;
   }
 }
