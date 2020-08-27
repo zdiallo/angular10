@@ -3,11 +3,17 @@
 
   <div>
     <nav>
-      <button title="Rafraichir" (click)="refresh()"><fa-icon [icon]="faRedoAlt"></fa-icon></button>
+      <button title="Rafraichir" (click)="refresh()">
+        <fa-icon [icon]="faRedoAlt"></fa-icon>
+      </button>
       <button title="Ajouter" routerLink="create">
         <fa-icon [icon]="faPlus"></fa-icon>
       </button>
-      <button title="Supprimer" *ngIf="selectedArticles.length > 0" (click)="remove()">
+      <button
+        title="Supprimer"
+        *ngIf="selectedArticles.length > 0"
+        (click)="remove()"
+      >
         <fa-icon [icon]="faTrashAlt"></fa-icon>
       </button>
     </nav>
@@ -28,7 +34,7 @@
           (click)="toggle(a)"
           [class.selected]="selectedArticles.includes(a)"
         >
-          <td>{{ a.name }}</td>
+          <td [title]="a.name">{{ a.name | ellipsis: 15 }}</td>
           <td>{{ a.price }}</td>
           <td>{{ a.qty }}</td>
         </tr>
