@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { faRedoAlt, faPlus } from '@fortawesome/free-solid-svg-icons';
-
-import { Article } from 'src/app/interfaces/article';
 import { from } from 'rxjs';
+
+import { ArticleService } from 'src/app/services/article.service';
 
 @Component({
   selector: 'app-stock',
@@ -13,13 +13,7 @@ export class StockComponent implements OnInit {
   faRedoAlt = faRedoAlt;
   faPlus = faPlus;
 
-  articles: Article[] = [
-    { name: 'Tournevis', price: 2.4, qty: 140 },
-    { name: 'Tournevis cruciforme', price: 2.78, qty: 140 },
-    { name: 'Marteau', price: 2.4, qty: 140 },
-  ];
-
-  constructor() {}
+  constructor(public articleService: ArticleService) {}
 
   ngOnInit(): void {}
 }
