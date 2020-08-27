@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faRedoAlt, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faRedoAlt, faPlus, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { from } from 'rxjs';
 
 import { ArticleService } from 'src/app/services/article.service';
@@ -12,6 +12,7 @@ import { ArticleService } from 'src/app/services/article.service';
 export class StockComponent implements OnInit {
   faRedoAlt = faRedoAlt;
   faPlus = faPlus;
+  faTrashAlt  = faTrashAlt;
 
   constructor(public articleService: ArticleService) {}
 
