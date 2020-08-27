@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { faRedoAlt, faPlus, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+  faRedoAlt,
+  faPlus,
+  faTrashAlt,
+} from '@fortawesome/free-solid-svg-icons';
 import { from } from 'rxjs';
 
 import { ArticleService } from 'src/app/services/article.service';
+import { Article } from '../interfaces/article';
 
 @Component({
   selector: 'app-stock',
@@ -12,9 +17,15 @@ import { ArticleService } from 'src/app/services/article.service';
 export class StockComponent implements OnInit {
   faRedoAlt = faRedoAlt;
   faPlus = faPlus;
-  faTrashAlt  = faTrashAlt;
+  faTrashAlt = faTrashAlt;
+
+  selectedArticles: Article[] = [];
 
   constructor(public articleService: ArticleService) {}
 
   ngOnInit(): void {}
+
+  toggle(a: Article): void {
+    console.log('a: ', a);
+  }
 }
