@@ -21,10 +21,16 @@ table {
 
       tr {
         cursor: pointer;
+        &.selected{
+          background: #ccc;
+        }
       }
       
       tr:hover {
         background: #dddd;
+        &.selected{
+          background: #ccc;
+        }
       }
   }
 }

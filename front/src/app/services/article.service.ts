@@ -6,6 +6,7 @@ import { Article } from 'src/app/interfaces/article';
   providedIn: 'root',
 })
 export class ArticleService {
+  
   articles: Article[] = this.getArticles();
   constructor() {}
 
@@ -28,6 +29,11 @@ export class ArticleService {
 
   add(a: Article): void {
     this.articles.push(a);
+    this.save();
+  }
+
+  remove(selectedArticles: Article[]): void {
+    this.articles = this.articles.filter(a => !selectedArticles.includes(a));
     this.save();
   }
 }

@@ -26,6 +26,13 @@ export class StockComponent implements OnInit {
   ngOnInit(): void {}
 
   toggle(a: Article): void {
-    console.log('a: ', a);
+    if (this.selectedArticles.includes(a)) {
+      this.selectedArticles = this.selectedArticles.filter((art) => art !== a);
+      return;
+    }
+    this.selectedArticles.push(a);
+  }
+  remove(): void {
+    this.articleService.remove(this.selectedArticles);
   }
 }
