@@ -18,5 +18,13 @@ table {
       tr:nth-child(even) {
         background: #eee;
       }
+
+      tr {
+        cursor: pointer;
+      }
+      
+      tr:hover {
+        background: #dddd;
+      }
   }
 }
