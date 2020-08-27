@@ -32,7 +32,14 @@ export class StockComponent implements OnInit {
     }
     this.selectedArticles.push(a);
   }
+
   remove(): void {
     this.articleService.remove(this.selectedArticles);
+    this.selectedArticles.length = 0;
+  }
+
+  refresh(): void {
+    this.articleService.refresh();
+    this.selectedArticles.length = 0;
   }
 }
